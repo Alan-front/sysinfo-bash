@@ -9,5 +9,10 @@ echo "--- RAM ---"
 cat /proc/meminfo | head -2
 echo ""
 echo "--- SISTEMA ---"
+
+echo ""
+echo "--- DISCO ---"
+DF -h
+
 uname -a
 
