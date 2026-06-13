@@ -31,6 +31,17 @@ echo "HOME: $HOME"
 
 echo ""
 echo "--- SISTEMA ---"
+
+echo ""
+echo "--- TEMPERATURA CPU ---"
+cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null | awk '{print $1/1000 "°C"}' || echo "No disponible"
+
+echo ""
+echo "--- TIEMPO ENCENDIDO ---"
+cat /proc/uptime  |  awk '{print int($1/3600)"h "int(($1%3600)/60)"m "int($1%60)"s"}' 
+
+
+
 uname -a
 
 
